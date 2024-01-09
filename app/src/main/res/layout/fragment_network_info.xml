@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver"
+    tools:context=".Fragments.NetworkInfo">
+
+
+    <include
+        android:id="@+id/toolbarNetwork"
+        layout="@layout/toolbar_screens" />
+<LinearLayout
+    android:gravity="center"
+    android:id="@+id/llWifiName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/toolbarNetwork">
+    <LinearLayout
+        android:id="@+id/llWifiNameH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarNetwork">
+
+        <TextView
+            android:id="@+id/operatorNameHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wifi Name:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/txtnetworkName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Name to show "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/llsimOperatorHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarNetwork">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type: "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/txtsimClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Name to show "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/bg_network_items"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llWifiName">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="External IP"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtExternalIp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:text="Not Found"
+                    android:maxLength="15"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Host"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtHost"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:maxLength="15"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Local Host"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtLocalHost"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:maxLength="15"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="BSSID"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtBssid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mac Address"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:id="@+id/txtMac"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Broadcast address"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtBroadcastAdrs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Speed"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtSpeed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Strength"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtStrength"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Connection type"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtConnectionType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Network Type"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtnetworkType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Roaming"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/txtRoaming"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="netwrok class"
+                    android:textAllCaps="true"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAllCaps="true"
+                    android:layout_weight="0.1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtNetworkClass"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Not Found"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_14ssp"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

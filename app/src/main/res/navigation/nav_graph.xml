@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.champstech.appsinfo.Fragments.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_dashboardFrag"
+            app:destination="@id/dashboardFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFrag"
+        android:name="com.champstech.appsinfo.Fragments.DashboardFrag"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFrag_to_settingsFrag"
+            app:destination="@id/settingsFrag" />
+        <action
+            android:id="@+id/action_dashboardFrag_to_scanAppsFrag"
+            app:destination="@id/scanAppsFrag" />
+        <action
+            android:id="@+id/action_dashboardFrag_to_showBackUp"
+            app:destination="@id/showBackUp" />
+        <action
+            android:id="@+id/action_dashboardFrag_to_networkInfo"
+            app:destination="@id/networkInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFrag"
+        android:name="com.champstech.appsinfo.Fragments.SettingsFrag"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/scanAppsFrag"
+        android:name="com.champstech.appsinfo.Fragments.ScanAppsFrag"
+        android:label="fragment_scan_apps"
+        tools:layout="@layout/fragment_scan_apps" >
+        <action
+            android:id="@+id/action_scanAppsFrag_to_showappInfo"
+            app:destination="@id/showappInfo" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/showappInfo"
+        android:name="com.champstech.appsinfo.Fragments.ShowappInfo"
+        android:label="fragment_showapp_info"
+        tools:layout="@layout/fragment_showapp_info" >
+        <argument
+            android:name="dataPass"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+    <fragment
+        android:id="@+id/showBackUp"
+        android:name="com.champstech.appsinfo.Fragments.Backups.ShowBackUp"
+        android:label="fragment_show_back_up"
+        tools:layout="@layout/fragment_show_back_up" >
+        <action
+            android:id="@+id/action_showBackUp_to_applistWithBackup"
+            app:destination="@id/applistWithBackup" />
+    </fragment>
+    <fragment
+        android:id="@+id/networkInfo"
+        android:name="com.champstech.appsinfo.Fragments.NetworkInfo"
+        android:label="fragment_network_info"
+        tools:layout="@layout/fragment_network_info" />
+    <fragment
+        android:id="@+id/applistWithBackup"
+        android:name="com.champstech.appsinfo.Fragments.ApplistWithBackup"
+        android:label="fragment_applist_with_backup"
+        tools:layout="@layout/fragment_applist_with_backup" />
+
+
+</navigation>

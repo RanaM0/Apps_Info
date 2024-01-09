@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Apps Info</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummyPackagename">com.example.app123.</string>
+    <string name="etCondition">abcdefghijklmnopqrstuvwxyz1234567890</string>
+    <string name="file_size_format">%d MB</string>
+    <string name="uriString">package:com.champstech.appsinfo</string>
+    <string name="permission_place_holdeer">Permissions Required for the app to work \n if you deny the permissions the app \n will not work Properly</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/btnmenuRestore"
+        android:title="Restore">
+    </item>
+    <item android:id="@+id/btnmenuShare"
+        android:title="Share">
+    </item>
+    <item android:id="@+id/btnmenuDelete"
+        android:title="Delete">
+    </item>
+
+</menu>
